@@ -1,4 +1,0 @@
-nvcc -o async_disop.o -arch sm_35 -c -m32 asyncAPI.cu -Xcicc -O0 -Xptxas -O0 -I/usr/local/cuda/include -I/home/ss/Desktop/Kepler_Benchmark/test/inc
-
-g++ -o async_m2s async_disop.o -m32 -L ~/multi2sim/lib/.libs  -lm2s-cuda
-
