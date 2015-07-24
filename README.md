@@ -3,14 +3,14 @@
 
 
 Benchmark		Disassembly	Emulation
-asyncAPI 				   Yes
-clock					   Yes
-cppIntegration				   Yes
-cppOverload				   No
-inlinePTX				   Yes
-matrixMul				   Yes
-simpleMultiCopy				   Yes
-simpleOccupancy				   No
-simpleStreams				   Yes
-vectorAdd				   Yes
+asyncAPI 				        Yes
+clock					          Yes
+cppIntegration				  Yes
+cppOverload				      No
+inlinePTX				        Yes
+matrixMul				        Yes
+simpleMultiCopy				  Yes
+simpleOccupancy				  No
+simpleStreams				    Yes
+vectorAdd				        Yes
 
