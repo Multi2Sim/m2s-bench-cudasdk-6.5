@@ -11,10 +11,10 @@ INC = -I../include -I../inc
 
 objects = cppIntegration_disop.o
 
-cppIntegration_m2s : cppIntegration_gold.cpp main.cpp $(objects)
+CppIntegration : cppIntegration_gold.cpp main.cpp $(objects)
 	$(CC)  $^ -o $@ $(CCFLAGS) $(LDINC) $(LDFLAGS) -I../include 
 
 cppIntegration_disop.o : cppIntegration.cu
 	$(NVCC) -c $<  $(NVCCFLAGS) $(INC) -o $@
 clean :
-	rm cppIntegration_m2s $(objects)
+	rm CppIntegration $(objects)
