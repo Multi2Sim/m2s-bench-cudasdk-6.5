@@ -52,7 +52,7 @@ int MAX_TILES_SM10 = (FLOOR(MATRIX_SIZE_X,384) * FLOOR(MATRIX_SIZE_Y,384)) / (TI
 // Number of repetitions used for timing.  Two sets of repetitions are performed:
 // 1) over kernel launches and 2) inside the kernel over just the loads and stores
 
-#define NUM_REPS  100
+#define NUM_REPS  1
 
 // -------------------------------------------------------
 // Copies
@@ -437,6 +437,10 @@ main(int argc, char **argv)
     // any of these settings
     getParams(argc, argv, deviceProp, size_x, size_y, max_matrix_dim);
 
+
+    // Kepler Size
+    size_x = 256;
+    size_y = 256;
     if (size_x != size_y)
     {
         printf("\n[%s] does not support non-square matrices (row_dim_size(%d) != col_dim_size(%d))\nExiting...\n\n", sSDKsample, size_x, size_y);
@@ -540,7 +544,7 @@ main(int argc, char **argv)
 
     bool success = true;
 
-    for (int k = 0; k<8; k++)
+    for (int k = 7; k<8; k = k+8)
     {
         // set kernel pointer
         switch (k)
