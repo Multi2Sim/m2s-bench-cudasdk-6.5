@@ -12,9 +12,9 @@ INC = -I../include -I../inc
 objects = MatrixMul.o
 
 MatrixMul : $(objects)
-	$(CC)  $^ -o $@ $(CCFLAGS) $(LDINC) $(LDFLAGS)
+	$(CC)  $^ -o $@ $(CCFLAGS) $(LDINC) $(LDFLAGS) 
 
 MatrixMul.o : matrixmul.cu
-	$(NVCC) -c $<  $(NVCCFLAGS) -o $@
+	$(NVCC) -c $<  $(NVCCFLAGS) $(INC) -o $@
 clean :
 	rm MatrixMul $(objects)
